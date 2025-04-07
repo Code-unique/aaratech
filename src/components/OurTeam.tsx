@@ -3,7 +3,15 @@
 import React, { useState } from "react";
 import { FaInfoCircle } from "react-icons/fa";
 
-const teamMembers = [
+// Define the type for the team member object
+type MemberType = {
+  name: string;
+  role: string;
+  description: string;
+  image: string;
+};
+
+const teamMembers: MemberType[] = [
   {
     name: "Abhishek Bhandari",
     role: "Founder & CEO",
@@ -54,7 +62,12 @@ const teamMembers = [
   },
 ];
 
-const TeamCard = ({ member }) => {
+// Define the type for the TeamCard component props
+type TeamCardProps = {
+  member: MemberType;
+};
+
+const TeamCard = ({ member }: TeamCardProps) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
@@ -99,9 +112,9 @@ const OurTeam = () => {
       className="py-20 text-white"
       style={{
         backgroundImage: "url('/images/finalbg.jpg')",
-        backgroundSize: "cover", // Ensures the background image covers the entire section
+        backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed", // Optional: can be removed if causing issues on mobile
+        backgroundAttachment: "fixed",
       }}
     >
       <div className="container mx-auto text-center">
