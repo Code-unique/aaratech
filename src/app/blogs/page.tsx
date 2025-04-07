@@ -55,15 +55,17 @@ const Blogs = () => {
         <h1 className="text-3xl font-bold text-center pb-10 mt-2">Working Process</h1>
 
         {/* Scrollable Animated Sections */}
-        <div className="flex items-start justify-between py-20">
+        <div className="flex flex-col lg:flex-row items-start justify-between py-10 lg:py-20 space-y-12 lg:space-y-0">
           {/* Animated Image Component */}
-          <AnimatedImage
-            src={workingStep[currentStep].image}
-            alt={workingStep[currentStep].title}
-          />
+          <div className="w-full lg:w-[50%] flex justify-center">
+            <AnimatedImage
+              src={workingStep[currentStep].image}
+              alt={workingStep[currentStep].title}
+            />
+          </div>
 
           {/* Scroll-triggered Blog Content */}
-          <div className="w-[50%]">
+          <div className="w-full lg:w-[50%]">
             {workingStep.map((step: any, index: number) => (
               <div
                 key={index}
