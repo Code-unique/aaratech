@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: 0, 0, 0;
+
+  --background: 173, 216, 230;  
+
+
+
+  --primary: 59, 90, 255;
+  --heading-text: 14, 24, 41;
+  --para-text: 63, 63, 70;
+  --subtitle: 166, 179, 200;
+  --secondary: 82, 82, 91;
+  --dark-heading: 230, 234, 242;
+  --video-border: 81, 112, 162;
+}
+body {
+  font-family: var(--font-tt-wellingtons);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
