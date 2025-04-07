@@ -19,17 +19,17 @@ export default function Home() {
 
   return (
     <>
-      {/* Popup Modal */}
+      {/* Responsive Popup Modal */}
       {showPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="relative bg-white p-8 rounded-lg shadow-lg w-[80%] md:w-[60%] max-w-lg">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4">
+          <div className="relative bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-lg w-full max-w-md sm:max-w-lg md:max-w-xl overflow-y-auto max-h-[90vh]">
             <button
               onClick={handleClosePopup}
-              className="absolute top-2 right-2 text-black text-lg font-bold"
+              className="absolute top-2 right-2 text-gray-800 text-xl font-bold hover:text-red-500 transition duration-200"
+              aria-label="Close popup"
             >
-              X
+              &times;
             </button>
-            {/* Banner as the popup content */}
             <Banner />
           </div>
         </div>

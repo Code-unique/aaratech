@@ -17,28 +17,31 @@ const WorkingProcess = () => {
       }}
     >
       <Wrappper>
-        <div>
-          <h1 className="text-foreground text-center text-[40px] md:text-[50px] lg:text-[64px] font-extrabold leading-tight pb-12">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight pb-12">
             Our Working Process
           </h1>
 
-          <div className="block lg:hidden">
+          {/* Mobile & Tablet View */}
+          <div className="block lg:hidden space-y-16">
             {workingStep.map((step: any, index: number) => (
-              <div key={index} className="py-10">
-                <div className="overflow-hidden rounded-lg shadow-lg">
+              <div key={index} className="space-y-6">
+                <div className="overflow-hidden rounded-2xl shadow-lg">
                   <img
                     src={step.image}
                     alt={step.title}
-                    className="w-full h-[270px] md:h-[320px] object-cover rounded-lg transition-transform duration-300 transform hover:scale-105"
+                    className="w-full aspect-[4/3] object-cover rounded-2xl transition-transform duration-300 hover:scale-105"
                   />
                 </div>
 
-                <div className="h-full flex flex-col justify-center items-start py-8">
-                  <p className="text-[48px] md:text-[56px] font-semibold text-teal-600">Step 0{step.id}</p>
-                  <h3 className="text-[72px] md:text-[80px] lg:text-[96px] font-bold text-foreground pt-4 pb-5 leading-tight hover:text-teal-500 transition-colors duration-300">
+                <div className="flex flex-col items-start space-y-4 px-2 sm:px-4">
+                  <p className="text-2xl sm:text-3xl font-semibold text-teal-600">
+                    Step 0{step.id}
+                  </p>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight hover:text-teal-500 transition-colors duration-300">
                     {step.title}
                   </h3>
-                  <p className="text-[40px] md:text-[44px] lg:text-[48px] font-medium text-foreground/90 w-full">
+                  <p className="text-lg sm:text-xl font-medium text-foreground/90">
                     {step.content}
                   </p>
                 </div>
@@ -46,6 +49,7 @@ const WorkingProcess = () => {
             ))}
           </div>
 
+          {/* Desktop View */}
           <div className="hidden lg:block">
             <WorkingSteps workingStep={workingStep} />
           </div>
