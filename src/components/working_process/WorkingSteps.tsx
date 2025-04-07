@@ -5,13 +5,12 @@ import ContentAnimation from "./ContentAnimation";
 
 const WorkingSteps = ({ workingStep }: any) => {
   const [currentStep, setCurrentStep] = useState(0);
-  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const stepRefs = useRef<HTMLDivElement[]>([]);  // Fixed type
 
   useEffect(() => {
     const handleScroll = () => {
       const stepPositions = stepRefs.current
-        .filter((ref) => ref !== null) // Ensure refs are not null
-        .map((ref) => ref?.getBoundingClientRect()?.top ?? Infinity);
+        .map((ref) => ref?.getBoundingClientRect().top ?? Infinity);
 
       const currentIndex = stepPositions.findIndex((position, index) => {
         const nextPosition = stepPositions[index + 1];
@@ -43,7 +42,9 @@ const WorkingSteps = ({ workingStep }: any) => {
         {workingStep.map((step: any, index: number) => (
           <div
             key={index}
-            ref={(el) => (stepRefs.current[index] = el)}
+            ref={(el) => {
+              if (el) stepRefs.current[index] = el;  // Fixed ref callback
+            }}
             className="mb-12 h-[300px] lg:h-[650px]"
           >
             <ContentAnimation step={step} index={index} currentStep={currentStep} />

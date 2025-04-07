@@ -5,8 +5,22 @@ import TestimonialCard from "./TestimonialCard";
 import { useQuery } from "@tanstack/react-query";
 import { getTestimonialData } from "@/lib/api";
 
+// Define the type for the response data
+type Testimonial = {
+  sys: {
+    id: string;
+  };
+  reviewerName: string;
+  reviewerPhoto: {
+    url: string;
+    title: string;
+  };
+  ratingNumber: number;
+  description: string;
+};
+
 const Testimonial = () => {
-  const { data, isPending, error } = useQuery({
+  const { data, isPending, error } = useQuery<Testimonial[]>({
     queryKey: ["Testimonial"],
     queryFn: getTestimonialData,
   });
@@ -15,7 +29,7 @@ const Testimonial = () => {
     <div
       className="py-20"
       style={{
-        backgroundImage: "url('/images/finalbg.jpg')", 
+        backgroundImage: "url('/images/finalbg.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
@@ -26,15 +40,13 @@ const Testimonial = () => {
           Testimonials
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 py-6">
-          {/* Ensure data is available before attempting to map over it */}
-          {data?.length > 0 ? (
-            data.map((each: any, index: number) => (
+          {data && data.length > 0 ? (  // Ensure data is not undefined
+            data.map((each, index) => (
               <TestimonialCard key={each.sys.id} each={each} index={index} />
             ))
           ) : (
             <div className="text-center text-black">No testimonials available.</div>
           )}
-          {/* Show loading skeletons while data is being fetched */}
           {isPending &&
             !error &&
             [1, 2, 3, 4].map((item) => (

@@ -9,7 +9,9 @@ export type featureWork = {
     }[];
   };
   projectTitle: string;
+  projectDescription?: string; // Optional or remove the '?' if it's required
 };
+
 
 export type workDetail = {
   sys: {

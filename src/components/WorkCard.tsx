@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { featureWork } from "@/app/types";
 
 const WorkCard = ({ workDetail }: { workDetail: featureWork }) => {
@@ -59,7 +59,8 @@ const WorkCard = ({ workDetail }: { workDetail: featureWork }) => {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white p-4 rounded-lg w-96">
             <h3 className="text-xl font-semibold mb-4">Project Details</h3>
-            <p>{workDetail.projectDescription}</p>
+            {/* Add a fallback for projectDescription if it's undefined */}
+            <p>{workDetail.projectDescription || "No description available."}</p>
             <button
               onClick={() => setDetailModalOpen(false)}
               className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-full"

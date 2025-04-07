@@ -1,7 +1,26 @@
 import React, { useState } from "react";
 import Stars from "./Stars";
 
-const TestimonialCard = ({ each }: { each: any }) => {
+// Define the types for the testimonial data
+type Testimonial = {
+  sys: {
+    id: string;
+  };
+  reviewerName: string;
+  reviewerPhoto: {
+    url: string;
+    title: string;
+  };
+  ratingNumber: number;
+  description: string;
+};
+
+type TestimonialCardProps = {
+  each: Testimonial;
+  index: number;
+};
+
+const TestimonialCard = ({ each }: TestimonialCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -13,9 +32,7 @@ const TestimonialCard = ({ each }: { each: any }) => {
   };
 
   return (
-    <div
-      className="px-5 py-6 bg-background text-headingText rounded-[16px] flex flex-col justify-between" // Simplified for consistent layout
-    >
+    <div className="px-5 py-6 bg-background text-headingText rounded-[16px] flex flex-col justify-between">
       {/* Reviewer Information */}
       <div className="flex items-start gap-4 mb-4">
         {each.reviewerPhoto?.url ? (
@@ -25,7 +42,7 @@ const TestimonialCard = ({ each }: { each: any }) => {
             className="object-cover rounded-full overflow-hidden w-[50px] h-[50px]"
           />
         ) : (
-          <div className="w-[50px] h-[50px] bg-gray-300 rounded-full"></div> // Fallback for missing image
+          <div className="w-[50px] h-[50px] bg-gray-300 rounded-full"></div>
         )}
         <div>
           <h5 className="font-medium text-base text-headingText">{each.reviewerName}</h5>
@@ -55,8 +72,8 @@ const TestimonialCard = ({ each }: { each: any }) => {
           onClick={closeModal}
         >
           <div
-            className="bg-white rounded-lg w-[60%] sm:w-[50%] md:w-[40%] p-6" // Smaller width
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+            className="bg-white rounded-lg w-[60%] sm:w-[50%] md:w-[40%] p-6"
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               className="absolute top-4 right-4 text-gray-500"
