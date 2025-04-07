@@ -6,6 +6,17 @@ import { getClientsLogos } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import LogoShimmer from "./shimmers/LogoShimmer";
 
+// ✅ Define the ClientType to avoid implicit any error
+type ClientType = {
+  sys: {
+    id: string;
+  };
+  clientLogo: {
+    url: string;
+    title?: string;
+  };
+};
+
 const ClientSection = () => {
   const { data, error, isPending } = useQuery({
     queryKey: ["clientsLogos"],
@@ -39,7 +50,7 @@ const ClientSection = () => {
           {isPending
             ? Array.from({ length: 8 }).map((_, index) => <LogoShimmer key={index} />)
             : clients.length > 0
-            ? clients.map((client) => (
+            ? clients.map((client: ClientType) => (
                 <div key={client.sys.id} className="md:px-4 md:py-2">
                   <div className="relative w-[80px] h-[60px] sm:w-[100px] sm:h-[80px] md:w-[140px] md:h-[100px] p-3">
                     <img
