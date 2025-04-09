@@ -22,7 +22,7 @@ const teamMembers: MemberType[] = [
     name: "Er. Rajan Basnet",
     role: "co.Founder & CTO",
     description: "The tech-savvy one who dissects machines for fun.",
-    image: "/images/rajan.png",
+    image: "/images/rajan.jpg",
   },
   {
     name: "Er. Pawan Karki",
@@ -34,7 +34,7 @@ const teamMembers: MemberType[] = [
     name: "Er. Shasank Pokharel",
     role: "co.Founder & CFO",
     description: "The boring dude who looks after paperwork and keeps hisab.",
-    image: "/images/shasank.png",
+    image: "/images/Sashank.png",
   },
   {
     name: "Chandra Lal Bohora",
