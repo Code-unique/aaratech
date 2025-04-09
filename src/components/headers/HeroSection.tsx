@@ -56,7 +56,7 @@ const HeroSection = () => {
                 opacity: isMobile ? 1 : titleOpacity,
                 translateY: isMobile ? 0 : titleTranslateY,
               }}
-              className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[60px] xl:text-[64px] font-semibold text-center bg-darkHeading 
+              className="text-[45px] sm:text-[36px] md:text-[44px] lg:text-[60px] xl:text-[64px] font-semibold text-center bg-darkHeading 
               bg-gradient-to-t from-[#E6EAF2]/0 to-[#C3CCD9] bg-clip-text leading-snug"
             >
               Aara Technology{" "}

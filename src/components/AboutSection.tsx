@@ -27,7 +27,7 @@ const AboutSection = () => {
               <span className="text-primary text-[28px] ">A</span>
               re you looking to bring your parts/ product design idea to life?
               Our product prototype design service offers a range of options,
-              from basic 3D printed mock-ups to fully functioning filed ready
+              from basic 3D printed mock-ups to fully functioning field ready
               parts/products. Contact us right away to transform your concept
               into reality with our product development and engineering
               expertise backed by high-quality 3dprinting and laser cutting

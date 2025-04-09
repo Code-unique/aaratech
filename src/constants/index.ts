@@ -62,7 +62,7 @@ export const workingStep = [
     title: "Design",
     content:
       "Using advanced CAD software, our designers create detailed models and plans, ensuring your ideas take precise shape.",
-    image: "/images/design.png",
+    image: "/images/processdesign.png",
   },
   {
     id: 3,

@@ -20,19 +20,19 @@ const teamMembers: MemberType[] = [
   },
   {
     name: "Er. Rajan Basnet",
-    role: "co.Founder & CTO",
+    role: "Co-Founder & CTO",
     description: "The tech-savvy one who dissects machines for fun.",
-    image: "/images/rajan.jpg",
+    image: "/images/rajan.png",
   },
   {
     name: "Er. Pawan Karki",
-    role: "co.Founder & Chief Advisor",
+    role: "Co-Founder & Chief Advisor",
     description: "The well-connected guy who’s brilliant at PR, Leads Marketing.",
     image: "/images/pawan.png",
   },
   {
     name: "Er. Shasank Pokharel",
-    role: "co.Founder & CFO",
+    role: "Co-Founder & CFO",
     description: "The boring dude who looks after paperwork and keeps hisab.",
     image: "/images/Sashank.png",
   },
@@ -52,7 +52,7 @@ const teamMembers: MemberType[] = [
     name: "Er. Hemanta Neupane",
     role: "Product Development Engineer",
     description: "",
-    image: "images/hemanta.jpg",
+    image: "images/hemanta.png",
   },
   {
     name: "Sabin Basnet",
