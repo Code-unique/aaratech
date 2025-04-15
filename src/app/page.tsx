@@ -6,9 +6,9 @@ import FeatureWorks from "@/components/FeatureWorks";
 import WorkingProcess from "@/components/working_process/WorkingProcess";
 import OurTeam from "@/components/OurTeam";
 import FaqSection from "@/components/faq/FaqSection";
-import Testimonial from "@/components/testimonial/Testimonial";
 import AboutSection from "@/components/AboutSection";
 import Banner from "@/components/Banner"; // Keep this for popup only
+import GoogleFeedbackSection from "@/components/reviewsection/GoogleFeedbackSection";
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(true);
@@ -26,11 +26,12 @@ export default function Home() {
 
   return (
     <>
+    <div className="mt-0 pt-0 bg-background">
       {/* Responsive Popup Modal */}
       {showPopup && (
         <div
           id="popup-overlay"
-          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4"
+          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4 mt-0 pt-0"
           onClick={handleClosePopup} // Trigger close on clicking the overlay
         >
           <div
@@ -49,9 +50,10 @@ export default function Home() {
       <WorkingProcess />
       <OurTeam />
       <FaqSection />
-      <Testimonial />
+      <GoogleFeedbackSection />
       {/* Removed second <Banner /> */}
       <AboutSection />
+      </div>
     </>
   );
 }

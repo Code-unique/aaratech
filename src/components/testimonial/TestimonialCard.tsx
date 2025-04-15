@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import Stars from "./Stars";
 
-// Define the types for the testimonial data
 type Testimonial = {
-  sys: {
-    id: string;
-  };
+  sys: { id: string };
   reviewerName: string;
-  reviewerPhoto: {
-    url: string;
-    title: string;
-  };
+  reviewerPhoto: { url: string; title: string };
   ratingNumber: number;
   description: string;
+  projectPhoto?: { url: string; title: string };
 };
 
 type TestimonialCardProps = {
@@ -23,26 +18,18 @@ type TestimonialCardProps = {
 const TestimonialCard = ({ each }: TestimonialCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
-    <div className="px-5 py-6 bg-background text-headingText rounded-[16px] flex flex-col justify-between">
-      {/* Reviewer Information */}
+    <div className="px-5 py-6 bg-background text-headingText rounded-[16px] flex flex-col justify-between shadow-lg">
+      {/* Reviewer Info */}
       <div className="flex items-start gap-4 mb-4">
         {each.reviewerPhoto?.url ? (
           <img
             src={each.reviewerPhoto.url}
             alt={each.reviewerPhoto.title}
-            className="object-cover rounded-full overflow-hidden w-[50px] h-[50px]"
+            className="object-cover rounded-full w-[50px] h-[50px]"
           />
         ) : (
-          <div className="w-[50px] h-[50px] bg-gray-300 rounded-full"></div>
+          <div className="w-[50px] h-[50px] bg-gray-300 rounded-full" />
         )}
         <div>
           <h5 className="font-medium text-base text-headingText">{each.reviewerName}</h5>
@@ -50,15 +37,15 @@ const TestimonialCard = ({ each }: TestimonialCardProps) => {
         </div>
       </div>
 
-      {/* Testimonial Description */}
+      {/* Description */}
       <p className="text-base text-paraText font-medium py-4 h-[130px] overflow-hidden mb-4">
         {each.description}
       </p>
 
-      {/* Read More Button */}
+      {/* Read More */}
       <div className="mt-auto flex justify-end">
         <button
-          onClick={openModal}
+          onClick={() => setIsModalOpen(true)}
           className="px-4 py-2 bg-teal-500 text-white rounded-[8px]"
         >
           Read More
@@ -69,35 +56,37 @@ const TestimonialCard = ({ each }: TestimonialCardProps) => {
       {isModalOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-          onClick={closeModal}
+          onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="bg-white rounded-lg w-[60%] sm:w-[50%] md:w-[40%] p-6"
+            className="bg-white rounded-lg w-[90%] max-w-[600px] p-6 relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               className="absolute top-4 right-4 text-gray-500"
-              onClick={closeModal}
+              onClick={() => setIsModalOpen(false)}
             >
               ✖
             </button>
-            <h2 className="text-2xl font-semibold text-headingText mb-4">
-              {each.reviewerName} - Testimonial
+
+            <h2 className="text-2xl font-semibold text-headingText mb-2">
+              {each.reviewerName}'s Testimonial
             </h2>
-            {each.reviewerPhoto?.url ? (
-              <img
-                src={each.reviewerPhoto.url}
-                alt={each.reviewerPhoto.title}
-                className="object-cover rounded-full overflow-hidden w-[60px] h-[60px] mb-4"
-              />
-            ) : (
-              <div className="w-[60px] h-[60px] bg-gray-300 rounded-full mb-4"></div>
-            )}
+
             <Stars starSize="20" rating={each.ratingNumber} />
 
             <p className="text-lg text-paraText font-medium py-4">
               {each.description}
             </p>
+
+            {/* Project Photo if available */}
+            {each.projectPhoto?.url && (
+              <img
+                src={each.projectPhoto.url}
+                alt={each.projectPhoto.title}
+                className="w-full rounded-md mt-4"
+              />
+            )}
           </div>
         </div>
       )}
