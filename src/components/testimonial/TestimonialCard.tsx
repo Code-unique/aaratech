@@ -70,7 +70,7 @@ const TestimonialCard = ({ each }: TestimonialCardProps) => {
             </button>
 
             <h2 className="text-2xl font-semibold text-headingText mb-2">
-              {each.reviewerName}'s Testimonial
+              {`${each.reviewerName}'s Testimonial`}
             </h2>
 
             <Stars starSize="20" rating={each.ratingNumber} />
