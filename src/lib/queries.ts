@@ -34,7 +34,7 @@ export const clientLogoSection = `{
 
 export const worksQuery = `
 {
-  projectCollection(limit: 6){
+  projectCollection(limit: 20){
     items{
       sys{
         id
