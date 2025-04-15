@@ -50,13 +50,13 @@ const teamMembers: MemberType[] = [
   },
   {
     name: "Er. Hemanta Neupane",
-    role: "Product Development Engineer",
+    role: "Technical Advisor",
     description: "",
     image: "images/hemanta.png",
   },
   {
     name: "Sabin Basnet",
-    role: "Chief Operating Officer",
+    role: "Financial Advisor",
     description: "",
     image: "images/sabin1.png",
   },
