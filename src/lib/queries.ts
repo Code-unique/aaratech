@@ -109,7 +109,7 @@ export function eachWorkQuery(id: string) {
 }
 
 export const testimonialsQuery = `{
- testimonialCollection(limit:9,order: sys_publishedAt_ASC) {
+ testimonialCollection(limit:100,order: sys_publishedAt_ASC) {
     items {
       sys {
         id

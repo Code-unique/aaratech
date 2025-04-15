@@ -75,18 +75,20 @@ const TestimonialCard = ({ each }: TestimonialCardProps) => {
 
             <Stars starSize="20" rating={each.ratingNumber} />
 
-            <p className="text-lg text-paraText font-medium py-4">
-              {each.description}
-            </p>
+            {/* Responsive Flex Layout for Description and Image */}
+            <div className="flex flex-col sm:flex-row gap-4 py-4">
+              <p className="text-lg text-paraText font-medium flex-1">
+                {each.description}
+              </p>
 
-            {/* Project Photo if available */}
-            {each.projectPhoto?.url && (
-              <img
-                src={each.projectPhoto.url}
-                alt={each.projectPhoto.title}
-                className="w-full rounded-md mt-4"
-              />
-            )}
+              {each.projectPhoto?.url && (
+                <img
+                  src={each.projectPhoto.url}
+                  alt={each.projectPhoto.title}
+                  className="w-full sm:w-1/2 h-auto rounded-md object-contain"
+                />
+              )}
+            </div>
           </div>
         </div>
       )}

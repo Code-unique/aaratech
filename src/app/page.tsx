@@ -8,7 +8,7 @@ import OurTeam from "@/components/OurTeam";
 import FaqSection from "@/components/faq/FaqSection";
 import AboutSection from "@/components/AboutSection";
 import Banner from "@/components/Banner"; // Keep this for popup only
-import GoogleFeedbackSection from "@/components/reviewsection/GoogleFeedbackSection";
+import Testimonial from "@/components/testimonial/Testimonial";
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(true);
@@ -45,12 +45,12 @@ export default function Home() {
 
       {/* Main content */}
       <Headers />
-      <ClientSection />
       <FeatureWorks />
+      <ClientSection />
       <WorkingProcess />
       <OurTeam />
       <FaqSection />
-      <GoogleFeedbackSection />
+      <Testimonial />
       {/* Removed second <Banner /> */}
       <AboutSection />
       </div>
