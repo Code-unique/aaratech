@@ -22,15 +22,26 @@ const Navigation = () => {
   return (
     <Wrapper>
       <div className="relative z-50 flex items-center justify-between py-6">
-        <div className="ml-[-15px]">
-          <img
-            src="/icons/logo1.svg"
-            alt="logo"
-            width={200}
-            height={70}
-            className="h-[70px] w-[200px]"
-          />
-        </div>
+        {/* Logo with Home redirect */}
+        <Link href="/" className="ml-[-15px]">
+  <div className="relative border-black w-[210px] h-[75px]">
+
+
+    {/* Logo Image inside Triangle */}
+    <img
+      src="/icons/logo1.png"
+      alt="logo"
+      width={200}
+      height={70}
+      className="absolute inset-[2px] w-[calc(100%-4px)] h-[calc(100%-4px)] object-contain"
+      style={{
+        clipPath: "polygon(50% -0.5px, 75% 85%, 25% 85%)",
+      }}
+    />
+  </div>
+</Link>
+
+
 
         {/* Desktop Navigation */}
         <nav className="hidden sm:flex space-x-6">
