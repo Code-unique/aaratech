@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left items-center">
           {/* Column 1: Logo + Text */}
           <div>
-            <img width={100} height={15} src="/icons/logo1.svg" alt="logo" />
+            <img width={100} height={15} src="/icons/logo1.png" alt="logo" />
             <p className="text-black text-lg font-medium opacity-80 mt-4">
               Aara Technology, where your product ideas become reality. As
               industry pioneers, we turn concepts into field-ready products with

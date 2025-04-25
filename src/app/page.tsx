@@ -47,7 +47,7 @@ export default function Home() {
   className="absolute top-2 right-2 text-black text-2xl md:text-3xl z-10"
   aria-label="Close popup"
 >
-  <X className="w-6 h-6 sm:w-7 sm:h-7" />
+  <X className="w-4 h-4 sm:w-5 sm:h-5" />
 </button>
 
   {/* Banner div with no margin or padding to remove the space between */}

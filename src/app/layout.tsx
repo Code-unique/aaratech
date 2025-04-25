@@ -49,7 +49,6 @@ const ttWellingtonsFont = localFont({
 
 export const metadata: Metadata = {
   title: "AaraTech",
-
   description: "",
   keywords: [
     "Aara tech",
@@ -77,7 +76,7 @@ export const metadata: Metadata = {
     siteName: "Aara Tech",
     images: [
       {
-        url: "/icons/logo.png",
+        url: "/icons/logo1.png",  // Updated to the new logo
       },
     ],
     locale: "en-US",
@@ -89,18 +88,18 @@ export const metadata: Metadata = {
     creator: "@aara_tech",
     images: [
       {
-        url: "/icons/logo.png",
+        url: "/icons/logo1.png",  // Updated to the new logo
       },
     ],
     card: "summary_large_image",
   },
   icons: {
-    icon: "/icons/logo.png",
-    shortcut: "/icons/logo.png",
-    apple: "/icons/logo.png",
+    icon: "/icons/logo1.png",  // Updated to the new logo
+    shortcut: "/icons/logo1.png",  // Shortcut icon
+    apple: "/icons/logo1.png",  // Apple touch icon
     other: {
       rel: "apple-touch-icon",
-      url: "/icons/logo.png",
+      url: "/icons/logo1.png",  // Updated to the new logo
     },
   },
 };
